@@ -31,7 +31,7 @@ public class Day_17 implements Day {
 
         return state.get(pos + 1);
     }
-    
+
     int calcFirst(int stepCount) {
         int pos = 1;
         int size = 2;
