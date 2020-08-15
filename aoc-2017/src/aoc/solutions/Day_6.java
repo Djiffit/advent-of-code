@@ -3,10 +3,7 @@ package aoc.solutions;
 import aoc.misc.Day;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Day_6 implements Day {
@@ -61,7 +58,7 @@ public class Day_6 implements Day {
     }
 
     private int findCycle(List<Integer> numbers) {
-        List<Integer> target = numbers.stream().collect(Collectors.toList());
+        List<Integer> target = new ArrayList<>(numbers);
         int rounds = 1;
         runBalance(numbers);
         while (!numbers.equals(target)) {

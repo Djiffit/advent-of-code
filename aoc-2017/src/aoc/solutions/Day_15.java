@@ -3,7 +3,6 @@ package aoc.solutions;
 import aoc.misc.Day;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class Day_15 implements Day {
 

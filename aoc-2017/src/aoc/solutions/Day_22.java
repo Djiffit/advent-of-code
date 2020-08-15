@@ -1,13 +1,11 @@
 package aoc.solutions;
 
 import aoc.misc.Day;
+import javafx.geometry.Point2D;
 
 import java.io.IOException;
 import java.util.HashMap;
-import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-
-import java.util.*;
+import java.util.Map;
 
 public class Day_22 implements Day {
 

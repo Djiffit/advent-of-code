@@ -1,25 +1,22 @@
 package aoc.solutions;
 
 import aoc.misc.Day;
+import javafx.geometry.Point2D;
 
 import java.io.IOException;
-import java.util.HashMap;
-import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-
-import java.util.*;
 
 public class Day_19 implements Day {
 
     public Object part1() throws IOException {
-        String input = readDay(13);
+        String input = readDay(19);
         return collectLetters(input, false);
     }
 
     public Object part2() throws IOException {
-        String input = readDay(13);
+        String input = readDay(19);
         return collectLetters(input, true);
     }
+
 
     char getCharByPoint(Point2D currPoint, String[] rows) {
         return rows[(int) currPoint.getY()].charAt((int) currPoint.getX());
@@ -53,7 +50,7 @@ public class Day_19 implements Day {
                     deltaIndex = Math.floorMod(deltaIndex - 1, 4);
             } else if (Character.isAlphabetic(currChar))
                 letters.append(currChar);
-            else if (currChar == ' ')
+            else if (currChar == ' ' || currChar == '9')
                 break;
 
             currPoint = createPoint(currPoint, deltas[deltaIndex]);

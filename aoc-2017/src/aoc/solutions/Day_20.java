@@ -1,13 +1,13 @@
 package aoc.solutions;
 
 import aoc.misc.Day;
-
-import java.io.IOException;
-import java.util.HashMap;
-import javafx.geometry.Point2D;
 import javafx.geometry.Point3D;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

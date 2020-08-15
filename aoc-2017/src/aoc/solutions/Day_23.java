@@ -4,10 +4,6 @@ import aoc.misc.Day;
 
 import java.io.IOException;
 import java.util.HashMap;
-import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-
-import java.util.*;
 
 public class Day_23 implements Day {
 

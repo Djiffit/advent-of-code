@@ -2,24 +2,19 @@ package aoc.solutions;
 
 import aoc.misc.Day;
 import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
 
-import java.util.*;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Day_24 implements Day {
 
     public Object part1() throws IOException {
-        String input = readDay(13);
+        String input = readDay(24);
         return (findStrongestBridge(input, true));
     }
 
     public Object part2() throws IOException {
-        String input = readDay(13);
+        String input = readDay(24);
         return findStrongestBridge(input, false);
     }
 

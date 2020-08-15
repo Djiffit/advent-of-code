@@ -3,11 +3,9 @@ package aoc.solutions;
 import aoc.misc.Day;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Day_7 implements Day {
 

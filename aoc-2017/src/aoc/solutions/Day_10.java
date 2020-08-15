@@ -33,14 +33,18 @@ public class Day_10 implements Day {
         }
     }
 
-    private int twistOnce(String input) {
-        List<Integer> rotations = Arrays.asList(Stream.of(input.split(",")).map(Integer::valueOf).toArray(Integer[]::new));
+    public int twistOnce(String input) {
+        List<Integer> rotations = createRotations(input);
 
         List<Integer> nums = twistKnot(rotations, 1);
         return nums.get(0) * nums.get(1);
     }
 
-    private String createHex(List<Integer> nums) {
+    public List<Integer> createRotations(String input) {
+        return Arrays.asList(Stream.of(input.split(",")).map(Integer::valueOf).toArray(Integer[]::new));
+    }
+
+    public String createHex(List<Integer> nums) {
         StringBuilder hex = new StringBuilder();
 
         for (int i = 0; i < 16; i ++) {
@@ -53,7 +57,7 @@ public class Day_10 implements Day {
         return hex.toString();
     }
 
-    private String twist64(String input) {
+    public String twist64(String input) {
         List<Integer> rotations = new ArrayList<>();
         byte[] bytes = input.getBytes();
 
@@ -71,7 +75,7 @@ public class Day_10 implements Day {
         return createHex(nums);
     }
 
-    private List<Integer> twistKnot(List<Integer> rotations, int twistCount) {
+    public List<Integer> twistKnot(List<Integer> rotations, int twistCount) {
         List<Integer> nums = new ArrayList<>();
         int currPos = 0;
         int skipSize = 0;

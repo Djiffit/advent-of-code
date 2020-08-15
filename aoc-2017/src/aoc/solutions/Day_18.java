@@ -24,13 +24,12 @@ public class Day_18 implements Day {
         simulateUntilBlock(d1, input);
         simulateUntilBlock(d2, input);
         while (d1.queue.size() > 0 || d2.queue.size() > 0) {
-            d1.simulateUntilBlock(d2, input);
-            d2.simulateUntilBlock(d1, input);
+            d1.simulateUntilBlock(d1, input);
+            d2.simulateUntilBlock(d2, input);
         }
 
-        return d2.sendCounter;
+        return d2.sendCounter / 2;
     }
-
 
     long latestSound = 0L;
     long pos = 0L;

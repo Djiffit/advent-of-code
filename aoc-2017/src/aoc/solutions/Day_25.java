@@ -3,21 +3,19 @@ package aoc.solutions;
 import aoc.misc.Day;
 
 import java.io.IOException;
-import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Day_25 implements Day {
 
     public Object part1() throws IOException {
-        String input = readDay(25);
         return getChecksum(12172063);
     }
 
     public Object part2() throws IOException {
-        String input = readDay(25);
-        return getChecksum(12172063);
+        return "Nice job!";
     }
 
     long getChecksum(int stepCount) {
