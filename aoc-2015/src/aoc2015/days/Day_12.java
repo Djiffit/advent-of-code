@@ -1,8 +1,6 @@
 package aoc2015.days;
 
 import aoc2015.misc.Day;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
