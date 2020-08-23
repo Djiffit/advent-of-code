@@ -26,13 +26,13 @@ public class Main {
 //        days.add(new Day_13());
 //        days.add(new Day_14());
 //        days.add(new Day_15());
-        days.add(new Day_16());
-        days.add(new Day_17());
+//        days.add(new Day_16());
+//        days.add(new Day_17());
 //        days.add(new Day_18());
 //        days.add(new Day_19());
 //        days.add(new Day_20());
 //        days.add(new Day_21());
-//        days.add(new Day_22());
+        days.add(new Day_22());
 //        days.add(new Day_23());
 //        days.add(new Day_24());
 //        days.add(new Day_25());
