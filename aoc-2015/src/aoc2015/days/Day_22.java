@@ -11,15 +11,16 @@ public class Day_22 implements Day {
 
     @Override
     public Object part1() throws IOException {
-        return solvePartOne();
+        return doTheFUckingSImulationFUckingHelLFuckingOrderMyDudeFuckShit();
     }
 
     @Override
     public Object part2() throws IOException {
-        return solvePartOne();
+        part2 = true;
+        return doTheFUckingSImulationFUckingHelLFuckingOrderMyDudeFuckShit();
     }
 
-    List<String> spells = Arrays.asList("mm", "d", "s", "p", "r");
+    boolean part2;
 
     class Player {
         int health = 50;
@@ -55,18 +56,15 @@ public class Day_22 implements Day {
     void traverseGameTree(Player player, Boss boss, int usedMana, boolean pTurn, List<String> history) {
         player = new Player(player);
         boss = new Boss(boss);
-        if (pTurn) {
-            player.health -= 1;
-            if (player.health == 0)
-                return;
+        if (part2) {
+            if (pTurn) {
+                player.health -= 1;
+                if (player.health == 0)
+                    return;
+            }
         }
-        if (player.health <= 0 || player.mana <= 0)
+        if (player.health <= 0 || player.mana <= 0 || usedMana > record)
             return;
-        if (boss.health <= 0) {
-            System.out.println(history);
-            record = Math.min(usedMana, record);
-            return;
-        }
 
         if (player.rechargeDur > 0) {
             player.mana += 101;
@@ -80,8 +78,13 @@ public class Day_22 implements Day {
             boss.health -= 3;
         }
 
+        if (boss.health <= 0) {
+            record = Math.min(usedMana, record);
+            return;
+        }
+
         if (pTurn) {
-                if (player.mana >= 73) {
+                if (player.mana > 73) {
                     Boss newBoss = new Boss(boss);
                     Player newPlayer = new Player(player);
                     newBoss.health -= 2;
@@ -91,7 +94,7 @@ public class Day_22 implements Day {
                     traverseGameTree(newPlayer, newBoss, usedMana + 73, false, history);
                     history.remove(history.size() - 1);
                 }
-                if (player.mana >= 53) {
+                if (player.mana > 53) {
                     Boss newBoss = new Boss(boss);
                     newBoss.health -= 4;
                     Player newPlayer = new Player(player);
@@ -100,7 +103,7 @@ public class Day_22 implements Day {
                     traverseGameTree(newPlayer, newBoss, usedMana + 53, false, history);
                     history.remove(history.size() - 1);
                 }
-                if (player.mana >= 113 && player.shieldDur == 0) {
+                if (player.mana > 113 && player.shieldDur == 0) {
                     Boss newBoss = new Boss(boss);
                     Player newPlayer = new Player(player);
                     newPlayer.shieldDur = 6;
@@ -109,7 +112,7 @@ public class Day_22 implements Day {
                     traverseGameTree(newPlayer, newBoss, usedMana + 113, false, history);
                     history.remove(history.size() - 1);
                 }
-                if (player.mana >= 173 && boss.poisonDur == 0) {
+                if (player.mana > 173 && boss.poisonDur == 0) {
                     Boss newBoss = new Boss(boss);
                     Player newPlayer = new Player(player);
                     newBoss.poisonDur = 6;
@@ -118,7 +121,7 @@ public class Day_22 implements Day {
                     traverseGameTree(newPlayer, newBoss, usedMana + 173, false, history);
                     history.remove(history.size() - 1);
                 }
-                if (player.mana >= 229) {
+                if (player.mana > 229) {
                     Boss newBoss = new Boss(boss);
                     Player newPlayer = new Player(player);
                     newPlayer.rechargeDur = 5;
@@ -138,7 +141,8 @@ public class Day_22 implements Day {
         }
     }
 
-    int solvePartOne() {
+    int doTheFUckingSImulationFUckingHelLFuckingOrderMyDudeFuckShit( ) {
+        record = Integer.MAX_VALUE;
         traverseGameTree(new Player(), new Boss(), 0, true, new ArrayList<>());
 
         return record;
