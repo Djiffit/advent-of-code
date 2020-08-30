@@ -1,6 +1,6 @@
-package aoc2015.days;
+package aoc.days;
 
-import aoc2015.misc.Day;
+import aoc.misc.Day;
 
 import java.io.IOException;
 
