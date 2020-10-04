@@ -15,18 +15,18 @@ public class Day_10 implements Day {
 
     @Override
     public Object part1() throws IOException {
-        String input = readDay(10);
-        return solvePartOne(input);
+        String input = readDay(20);
+        return botTraders(input);
     }
 
     @Override
     public Object part2() throws IOException {
-        String input = readDay(10);
+        String input = readDay(20);
         bots = new HashMap<>();
         targets = new HashMap<>();
         outputs = new HashMap<>();
         part2 = true;
-        return solvePartOne(input);
+        return botTraders(input);
     }
 
     Map<Integer, Pair<Integer, Integer>> bots = new HashMap<>();
@@ -48,7 +48,7 @@ public class Day_10 implements Day {
         }
     }
 
-    String solvePartOne(String input) {
+    String botTraders(String input) {
         for (String line : input.split("\n")) {
             if (line.startsWith("value")) {
                String[] parts = line.split(" goes to bot ");

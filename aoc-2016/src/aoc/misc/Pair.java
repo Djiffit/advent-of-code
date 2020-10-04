@@ -2,7 +2,7 @@ package aoc.misc;
 
 import java.util.Objects;
 
-public class Pair<T1, T2> {
+public class Pair<T1, T2> implements Comparable {
     public T1 first;
     public T2 second;
     public Pair(T1 first, T2 second) {
@@ -26,5 +26,11 @@ public class Pair<T1, T2> {
     @Override
     public int hashCode() {
         return Objects.hash(first, second);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Pair<T1, T2> other = (Pair<T1, T2> ) o;
+        return (int) first < ((int) other.first ) ? -1 : 1;
     }
 }

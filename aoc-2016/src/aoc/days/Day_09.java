@@ -13,16 +13,16 @@ public class Day_09 implements Day {
     @Override
     public Object part1() throws IOException {
         String input = readDay(9);
-        return solvePartOne(input);
+        return compressionMaster(input);
     }
 
     @Override
     public Object part2() throws IOException {
         String input = readDay(9);
-        return solvePartTwo(input);
+        return megaCompressionMaster(input);
     }
 
-    int solvePartOne(String input) {
+    int compressionMaster(String input) {
         StringBuilder sb = new StringBuilder();
         StringBuilder repeat = new StringBuilder();
 
@@ -60,7 +60,7 @@ public class Day_09 implements Day {
         return sb.toString().length();
     }
 
-    long solvePartTwo(String input) {
+    long megaCompressionMaster(String input) {
         int currWeight = 1;
         List<Pair<Integer, Integer>> modifiers = new ArrayList<>();
         long total = 0;
