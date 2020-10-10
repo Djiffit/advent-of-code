@@ -31,6 +31,9 @@ public class Pair<T1, T2> implements Comparable {
     @Override
     public int compareTo(Object o) {
         Pair<T1, T2> other = (Pair<T1, T2> ) o;
-        return (int) first < ((int) other.first ) ? -1 : 1;
+        if ((long) first == ((long) other.first)) {
+            return (long) second < ((long) other.second) ? -1 : 1;
+        }
+        return (long) first < ((long) other.first ) ? -1 : 1;
     }
 }
